@@ -1,21 +1,21 @@
-@mixin media($max-width) {
-  @media screen and (width < $max-width) {
-    @content;
-  }
-}
-
-$container-xl: 100rem;
-$container-lg: 75rem;
-$container-md: 52.5rem;
-$container-sm: 37.5rem;
+@use '../../style/reset' as reset;
+@use '../../style/base' as base;
 
 :root {
-  --body-px: 1.5rem;
-  --content-mxw: 90rem;
-  --container-mxw: #{$container-xl};
+  --body-px: 5rem;
+  --content-mxw: 60rem;
+  --container-mxw: 75rem;
   --container-px: calc((var(--container-mxw) - var(--content-mxw)) / 2);
 
-  @include media($container-sm) {
+  @include base.media(base.$container-lg) {
+    --body-px: 2.5rem;
+  }
+
+  @include base.media(base.$container-md) {
+    --body-px: 1.5rem;
+  }
+
+  @include base.media(base.$container-sm) {
     --body-px: 1rem;
   }
 }
@@ -40,5 +40,20 @@ $container-sm: 37.5rem;
 
   > .full-width {
     grid-column: full-width;
+    &.inherit-grid {
+      display: grid;
+      grid-template-columns: inherit;
+      > * {
+        grid-column: content;
+      }
+    }
   }
+}
+
+.flow > * + * {
+  margin-top: 1em;
+}
+
+.section-padding {
+  padding-block: 2.5rem;
 }

@@ -1,8 +1,154 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+p {
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
 :root {
-  --body-px: 1.5rem;
-  --content-mxw: 90rem;
-  --container-mxw: 100rem;
+  font-family: "Pretendard Variable";
+}
+
+body {
+  font-size: 1.125rem;
+  font-weight: 450;
+}
+@media screen and (width < 37.5rem) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  line-break: normal;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-weight: 750;
+  font-size: 4.83729408rem;
+}
+@media screen and (width < 37.5rem) {
+  h1 {
+    font-size: 2.565784514rem;
+  }
+}
+
+h2 {
+  font-weight: 750;
+  font-size: 3.359232rem;
+}
+@media screen and (width < 37.5rem) {
+  h2 {
+    font-size: 2.0272865295rem;
+  }
+}
+
+h3 {
+  font-weight: 750;
+  font-size: 2.3328rem;
+}
+@media screen and (width < 37.5rem) {
+  h3 {
+    font-size: 1.6018066406rem;
+  }
+}
+
+h4 {
+  font-weight: 750;
+  font-size: 1.62rem;
+}
+@media screen and (width < 37.5rem) {
+  h4 {
+    font-size: 1.265625rem;
+  }
+}
+
+h5 {
+  font-weight: 750;
+  font-size: 1.35rem;
+}
+@media screen and (width < 37.5rem) {
+  h5 {
+    font-size: 1.125rem;
+  }
+}
+
+h6 {
+  font-weight: 750;
+  font-size: 1.125rem;
+}
+@media screen and (width < 37.5rem) {
+  h6 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (width < 37.5rem) {
+  p {
+    word-break: normal;
+  }
+}
+
+:root {
+  --body-px: 5rem;
+  --content-mxw: 60rem;
+  --container-mxw: 75rem;
   --container-px: calc((var(--container-mxw) - var(--content-mxw)) / 2);
+}
+@media screen and (width < 75rem) {
+  :root {
+    --body-px: 2.5rem;
+  }
+}
+@media screen and (width < 52.5rem) {
+  :root {
+    --body-px: 1.5rem;
+  }
 }
 @media screen and (width < 37.5rem) {
   :root {
@@ -22,4 +168,19 @@
 }
 .responsive-grid > .full-width {
   grid-column: full-width;
+}
+.responsive-grid > .full-width.inherit-grid {
+  display: grid;
+  grid-template-columns: inherit;
+}
+.responsive-grid > .full-width.inherit-grid > * {
+  grid-column: content;
+}
+
+.flow > * + * {
+  margin-top: 1em;
+}
+
+.section-padding {
+  padding-block: 2.5rem;
 }
