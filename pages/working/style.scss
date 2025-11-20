@@ -1,0 +1,44 @@
+@mixin media($max-width) {
+  @media screen and (width < $max-width) {
+    @content;
+  }
+}
+
+$container-xl: 100rem;
+$container-lg: 75rem;
+$container-md: 52.5rem;
+$container-sm: 37.5rem;
+
+:root {
+  --body-px: 1.5rem;
+  --content-mxw: 90rem;
+  --container-mxw: #{$container-xl};
+  --container-px: calc((var(--container-mxw) - var(--content-mxw)) / 2);
+
+  @include media($container-sm) {
+    --body-px: 1rem;
+  }
+}
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns:
+    [full-width-start] minmax(var(--body-px), 1fr)
+    [breakout-start] minmax(0, var(--container-px))
+    [content-start] min(100% - 2 * var(--body-px), var(--content-mxw))
+    [content-end]
+    minmax(0, var(--container-px)) [breakout-end]
+    minmax(var(--body-px), 1fr) [full-width-end];
+
+  > :not(.breakout, .full-width) {
+    grid-column: content;
+  }
+
+  > .breakout {
+    grid-column: breakout;
+  }
+
+  > .full-width {
+    grid-column: full-width;
+  }
+}

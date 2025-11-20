@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  text-size-adjust: none;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block-end: 0;
+  text-wrap: balance;
+
+  &:first-child {
+    margin-block-start: 0;
+  }
+}
+
+p {
+  margin-block-end: 0;
+  text-wrap: pretty;
+
+  &:first-child {
+    margin-block-start: 0;
+  }
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}

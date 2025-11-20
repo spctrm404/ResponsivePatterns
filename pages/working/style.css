@@ -1,0 +1,25 @@
+:root {
+  --body-px: 1.5rem;
+  --content-mxw: 90rem;
+  --container-mxw: 100rem;
+  --container-px: calc((var(--container-mxw) - var(--content-mxw)) / 2);
+}
+@media screen and (width < 37.5rem) {
+  :root {
+    --body-px: 1rem;
+  }
+}
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns: [full-width-start] minmax(var(--body-px), 1fr) [breakout-start] minmax(0, var(--container-px)) [content-start] min(100% - 2 * var(--body-px), var(--content-mxw)) [content-end] minmax(0, var(--container-px)) [breakout-end] minmax(var(--body-px), 1fr) [full-width-end];
+}
+.responsive-grid > :not(.breakout, .full-width) {
+  grid-column: content;
+}
+.responsive-grid > .breakout {
+  grid-column: breakout;
+}
+.responsive-grid > .full-width {
+  grid-column: full-width;
+}

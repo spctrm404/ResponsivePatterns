@@ -1,0 +1,93 @@
+@use 'sass:math';
+
+@mixin media($max-width) {
+  @media screen and (width < $max-width) {
+    @content;
+  }
+}
+
+$container-xl: 100rem;
+$container-lg: 75rem;
+$container-md: 52.5rem;
+$container-sm: 37.5rem;
+
+@mixin type-scale($coefficient, $base, $exponent) {
+  font-size: $coefficient * math.pow($base, $exponent);
+}
+
+$base-font-size: 1.125rem;
+$base-font-size-sm: 1rem;
+$base: 1.2;
+$base-sm: 1.125;
+
+:root {
+  font-family: 'Pretendard Variable';
+}
+
+body {
+  font-size: #{$base-font-size};
+
+  @include media($container-sm) {
+    font-size: #{$base-font-size-sm};
+  }
+}
+
+h1 {
+  font-weight: 700;
+
+  @include type-scale($base-font-size, $base, 8);
+
+  @include media($container-sm) {
+    @include type-scale($base-font-size-sm, $base-sm, 8);
+  }
+}
+
+h2 {
+  font-weight: 700;
+
+  @include type-scale($base-font-size, $base, 6);
+
+  @include media($container-sm) {
+    @include type-scale($base-font-size-sm, $base-sm, 6);
+  }
+}
+
+h3 {
+  font-weight: 700;
+
+  @include type-scale($base-font-size, $base, 4);
+
+  @include media($container-sm) {
+    @include type-scale($base-font-size-sm, $base-sm, 4);
+  }
+}
+
+h4 {
+  font-weight: 700;
+
+  @include type-scale($base-font-size, $base, 2);
+
+  @include media($container-sm) {
+    @include type-scale($base-font-size-sm, $base-sm, 2);
+  }
+}
+
+h5 {
+  font-weight: 700;
+
+  @include type-scale($base-font-size, $base, 1);
+
+  @include media($container-sm) {
+    @include type-scale($base-font-size-sm, $base-sm, 1);
+  }
+}
+
+h6 {
+  font-weight: 700;
+
+  @include type-scale($base-font-size, $base, 0);
+
+  @include media($container-sm) {
+    @include type-scale($base-font-size-sm, $base-sm, 0);
+  }
+}
