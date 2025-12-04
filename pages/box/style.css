@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+* :first-child {
+  margin-block-start: 0;
+}
+
 html {
   -webkit-text-size-adjust: none;
      -moz-text-size-adjust: none;
@@ -100,7 +104,6 @@ textarea:not([rows]) {
   --max-content-width: 75rem;
   --min-font-size: 1rem;
   --max-font-size: 1.25rem;
-  --default-padding: 1rem;
 }
 
 :root {
@@ -172,8 +175,8 @@ h6 {
 .container {
   position: relative;
   box-sizing: content-box;
-  max-inline-size: var(--container-max-width, var(--max-content-width));
-  padding-inline: var(--container-padding, 0);
+  max-inline-size: var(--container-max-width, var(--max-content-width, 75rem));
+  padding-inline: var(--container-padding, var(--space-s-3xl, 1rem));
   margin-inline: auto;
 }
 
@@ -195,11 +198,34 @@ body {
 }
 
 .box {
-  padding: var(--box-padding, var(--default-padding));
-  color: light-dark(var(--blue-shades-1), var(--blue-shades-6));
-  background-color: light-dark(var(--blue-shades-6), var(--blue-shades-1));
-  border: var(--box-border, 0.0625rem) solid;
+  --font-color: light-dark(var(--blue-shades-1), var(--blue-shades-6));
+  --background-color: light-dark(var(--blue-shades-6), var(--blue-shades-1));
+  --border-color: var(--font-color);
+  padding: var(--padding, var(--space-s, 1rem));
+  color: var(--font-color);
+  background-color: var(--background-color);
+  border: var(--border-width, 0) solid var(--border-color);
 }
 .box * {
   color: inherit;
+}
+
+.custom-box-1 {
+  --padding: 2rem;
+  --border-width: 0.25rem;
+  --font-color: light-dark(oklch(20% 0.05 30deg), oklch(90% 0.05 30deg));
+  --background-color: light-dark(
+    oklch(90% 0.05 30deg),
+    oklch(20% 0.05 30deg)
+  );
+}
+.custom-box-2 {
+  --padding: 3rem;
+  --border-width: 0.5rem;
+  --font-color: light-dark(oklch(20% 0.05 120deg), oklch(90% 0.05 120deg));
+  --background-color: light-dark(
+    oklch(90% 0.05 120deg),
+    oklch(20% 0.05 120deg)
+  );
+  --border-color: light-dark(oklch(20% 0.05 30deg), oklch(90% 0.05 30deg));
 }

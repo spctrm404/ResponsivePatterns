@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+* :first-child {
+  margin-block-start: 0;
+}
+
 html {
   -webkit-text-size-adjust: none;
      -moz-text-size-adjust: none;
@@ -100,7 +104,6 @@ textarea:not([rows]) {
   --max-content-width: 75rem;
   --min-font-size: 1rem;
   --max-font-size: 1.25rem;
-  --default-padding: 1rem;
 }
 
 :root {
@@ -172,7 +175,41 @@ h6 {
 .container {
   position: relative;
   box-sizing: content-box;
-  max-inline-size: var(--container-max-width, var(--max-content-width));
-  padding-inline: var(--container-padding, 0);
+  max-inline-size: var(--container-max-width, var(--max-content-width, 75rem));
+  padding-inline: var(--container-padding, var(--space-s-3xl, 1rem));
   margin-inline: auto;
+}
+
+.box {
+  --font-color: light-dark(
+    var(--shades-1, oklch(20% 0 240deg)),
+    var(--shades-6, oklch(90% 0 240deg))
+  );
+  --background-color: light-dark(
+    var(--shades-6, oklch(90% 0 240deg)),
+    var(--shades-1, oklch(20% 0 240deg))
+  );
+  --border-color: var(--font-color);
+  padding: var(--padding, var(--space-s, 1rem));
+  color: var(--font-color);
+  background-color: var(--background-color);
+  border: var(--border-width, 0) solid var(--border-color);
+}
+.box * {
+  color: inherit;
+}
+
+ul,
+ol {
+  padding-inline-start: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cluster-space, var(--space-m, 1.5rem));
+  align-items: var(--cluster-vertical-alignment, center);
+  justify-content: var(--cluster-horizontal-alignment, flex-start);
 }
