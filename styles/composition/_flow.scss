@@ -1,0 +1,11 @@
+.flow {
+  > * {
+    + * {
+      margin-block-start: var(--flow-space, 1em);
+    }
+
+    // &:first-child {
+    //   margin-block-start: 0;
+    // }
+  }
+}

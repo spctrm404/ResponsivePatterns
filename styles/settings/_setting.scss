@@ -1,0 +1,19 @@
+@use 'sass:math';
+
+$min-width: 600;
+$max-width: 1440;
+$min-content-width: 568;
+$max-content-width: 1200;
+$min-font-size: 16;
+$max-font-size: 20;
+$default-padding: 16;
+
+:root {
+  --min-width: #{math.div($min-width, 16)}rem;
+  --max-width: #{math.div($max-width, 16)}rem;
+  --min-content-width: #{math.div($min-content-width, 16)}rem;
+  --max-content-width: #{math.div($max-content-width, 16)}rem;
+  --min-font-size: #{math.div($min-font-size, 16)}rem;
+  --max-font-size: #{math.div($max-font-size, 16)}rem;
+  --default-padding: #{math.div($default-padding, 16)}rem;
+}

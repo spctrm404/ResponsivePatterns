@@ -1,0 +1,25 @@
+@use '../settings/setting' as setting;
+@use 'sass:math';
+
+.container {
+  display: grid;
+  grid-template-columns:
+    [full-width-start]
+    minmax(0, 1fr)
+    [breakout-start]
+    minmax(0, var(--container-padding, var(--default-padding)))
+    [content-start]
+    min(
+      100% - (2 * var(--container-padding, var(--default-padding))),
+      var(--max-content-width)
+    )
+    [content-end]
+    minmax(0, var(--container-padding, var(--default-padding)))
+    [breakout-end]
+    minmax(0, 1fr)
+    [full-width-end];
+
+  > * {
+    grid-column: content;
+  }
+}

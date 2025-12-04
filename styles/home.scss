@@ -1,0 +1,16 @@
+@use './global/reset';
+@use './settings/fluid_type';
+@use './settings/fluid_space';
+@use './composition/flow';
+@use './composition/container';
+
+ul,
+ol {
+  padding-inline-start: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.container {
+  --container-padding: var(--space-s-3xl);
+}

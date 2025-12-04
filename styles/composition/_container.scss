@@ -1,0 +1,10 @@
+@use '../settings/setting' as setting;
+@use 'sass:math';
+
+.container {
+  position: relative;
+  box-sizing: content-box;
+  max-inline-size: var(--container-max-width, var(--max-content-width));
+  padding-inline: var(--container-padding, 0);
+  margin-inline: auto;
+}
