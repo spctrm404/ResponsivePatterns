@@ -1,5 +1,5 @@
 @use '../../styles/global/reset';
-@use '../../styles/settings/fluid_type';
-@use '../../styles/settings/fluid_space';
+@use '../../styles/global/fluid-type';
+@use '../../styles/global/fluid-space';
 @use '../../styles/composition/flow';
-@use '../../styles/composition/container';
+@use '../../styles/composition/wrapper';

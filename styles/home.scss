@@ -1,8 +1,9 @@
 @use './global/reset';
-@use './settings/fluid_type';
-@use './settings/fluid_space';
+@use './global/perceptone';
+@use './global/fluid-type';
+@use './global/fluid-space';
 @use './composition/flow';
-@use './composition/container';
+@use './composition/wrapper';
 
 ul,
 ol {
@@ -11,6 +12,6 @@ ol {
   list-style: none;
 }
 
-.container {
-  --container-padding: var(--space-s-3xl);
+.wrapper {
+  --wrapper-padding: var(--space-s-3xl);
 }

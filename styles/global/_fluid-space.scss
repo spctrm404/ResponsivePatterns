@@ -1,13 +1,13 @@
-@use './setting' as setting;
+@use './config' as config;
 @use '../../node_modules/utopia-core-scss/src/utopia' as utopia;
 
 :root {
   @include utopia.generateSpaceScale(
     (
-      'minWidth': setting.$min-width,
-      'maxWidth': setting.$max-width,
-      'minSize': setting.$min-font-size,
-      'maxSize': setting.$max-font-size,
+      'minWidth': config.$min-width,
+      'maxWidth': config.$max-width,
+      'minSize': config.$min-font-size,
+      'maxSize': config.$max-font-size,
       'positiveSteps': (
         1.5,
         2,
@@ -23,7 +23,8 @@
       'customSizes': (
         's-3xl',
         's-2xl',
-        's-xl'
+        's-xl',
+        's-l'
       ),
       'prefix': 'space-',
       'relativeTo': 'viewport-width'

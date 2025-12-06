@@ -1,15 +1,15 @@
-@use './setting' as setting;
+@use './config' as config;
 @use '../../node_modules/utopia-core-scss/src/utopia' as utopia;
 
 :root {
   @include utopia.generateTypeScale(
     (
-      'minWidth': setting.$min-width,
-      'maxWidth': setting.$max-width,
-      'minFontSize': setting.$min-font-size,
-      'maxFontSize': setting.$max-font-size,
-      'minTypeScale': 1.2,
-      'maxTypeScale': 1.25,
+      'minWidth': config.$min-width,
+      'maxWidth': config.$max-width,
+      'minFontSize': config.$min-font-size,
+      'maxFontSize': config.$max-font-size,
+      'minTypeScale': config.$min-font-scale,
+      'maxTypeScale': config.$max-font-scale,
       'positiveSteps': 5,
       'negativeSteps': 2,
       'prefix': 'step-',
