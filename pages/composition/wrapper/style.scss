@@ -1,0 +1,47 @@
+@use '../../../styles/global/base';
+@use '../../../styles/composition/wrapper';
+
+code {
+  padding-inline-end: 0.5em;
+  font-weight: 700;
+}
+
+.elem {
+  &-grand-parent {
+    color: var(--on-primary-container);
+    background-color: var(--primary-container);
+
+    > * {
+      border: 0.0625rem solid;
+    }
+
+    code {
+      color: var(--on-secondary-container);
+    }
+  }
+
+  &-parent {
+    padding-inline: var(--space-s-l);
+    color: var(--on-secondary-container);
+    background-color: var(--secondary-container);
+
+    > * {
+      border: 0.0625rem solid;
+    }
+  }
+
+  &-child {
+    --wrapper-max-width: 999rem;
+
+    color: var(--on-tertiary-container);
+    background-color: var(--tertiary-container);
+
+    > * {
+      border: 0.0625rem solid;
+    }
+
+    code {
+      color: var(--on-primary-container);
+    }
+  }
+}

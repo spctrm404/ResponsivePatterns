@@ -1,17 +1,16 @@
-@use './global/reset';
-@use './global/perceptone';
-@use './global/fluid-type';
-@use './global/fluid-space';
+@use './global/base';
 @use './composition/flow';
 @use './composition/wrapper';
 
 ul,
 ol {
-  padding-inline-start: 0;
-  margin: 0;
   list-style: none;
 }
 
-.wrapper {
-  --wrapper-padding: var(--space-s-3xl);
+.section {
+  &__list {
+    & > * {
+      --flow-space: 0.5em;
+    }
+  }
 }

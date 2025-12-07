@@ -418,11 +418,19 @@ body {
   margin-inline: auto;
 }
 
-ul,
-ol {
-  list-style: none;
+code {
+  padding-inline-end: 0.5em;
+  font-weight: 700;
+  color: var(--primary);
 }
 
-.section__list > * {
-  --flow-space: 0.5em;
+.flow > * {
+  border: 0.0625rem solid;
+}
+
+.section {
+  font-size: var(--step-4);
+}
+.section > *:not(h1, h2, h3, h4, h5, h6) {
+  font-size: var(--step-0);
 }

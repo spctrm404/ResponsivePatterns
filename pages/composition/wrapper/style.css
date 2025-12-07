@@ -405,10 +405,6 @@ body {
   background-color: var(--surface-1);
 }
 
-.flow > * + * {
-  margin-block-start: var(--flow-space, 1em);
-}
-
 .wrapper {
   --p-x: var(--wrapper-padding, var(--space-s-3xl, 1rem));
   position: relative;
@@ -418,11 +414,37 @@ body {
   margin-inline: auto;
 }
 
-ul,
-ol {
-  list-style: none;
+code {
+  padding-inline-end: 0.5em;
+  font-weight: 700;
 }
 
-.section__list > * {
-  --flow-space: 0.5em;
+.elem-grand-parent {
+  color: var(--on-primary-container);
+  background-color: var(--primary-container);
+}
+.elem-grand-parent > * {
+  border: 0.0625rem solid;
+}
+.elem-grand-parent code {
+  color: var(--on-secondary-container);
+}
+.elem-parent {
+  padding-inline: var(--space-s-l);
+  color: var(--on-secondary-container);
+  background-color: var(--secondary-container);
+}
+.elem-parent > * {
+  border: 0.0625rem solid;
+}
+.elem-child {
+  --wrapper-max-width: 999rem;
+  color: var(--on-tertiary-container);
+  background-color: var(--tertiary-container);
+}
+.elem-child > * {
+  border: 0.0625rem solid;
+}
+.elem-child code {
+  color: var(--on-primary-container);
 }

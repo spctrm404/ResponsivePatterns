@@ -1,9 +1,11 @@
 @use 'sass:map';
 @use 'sass:math';
 
-$default-lightness-exponent: math.div(1, 1.2);
+$default-lightness-exponent: math.div(1, 1.8);
 $default-chroma-peak: 0.12;
-$default-lightness-at-chroma-peak: 0.75;
+$default-lightness-at-chroma-peak: 0.71;
+$default-prefix: 'tone-';
+$default-step-size: 2;
 
 @function lightness-value($args) {
   $step: map.get($args, 'step');
@@ -98,20 +100,20 @@ $default-lightness-at-chroma-peak: 0.75;
   $prefix: map.get($args, 'prefix');
 
   @if not $prefix {
-    $prefix: 'perceptone-';
+    $prefix: $default-prefix;
   }
 
-  $colour-name: map.get($args, 'colourName');
+  $tone-name: map.get($args, 'toneName');
 
-  @if not $colour-name {
-    $colour-name: '';
+  @if not $tone-name {
+    $tone-name: '';
   }
 
   $hue: map.get($args, 'hue');
   $step-size: map.get($args, 'stepSize');
 
   @if not $step-size {
-    $step-size: 10;
+    $step-size: $default-step-size;
   }
 
   $lightness-exponent: map.get($args, 'lightnessExponent');
@@ -135,8 +137,8 @@ $default-lightness-at-chroma-peak: 0.75;
   $steps-total: math.div(100, $step-size);
   $variable-name: --#{$prefix};
 
-  @if $colour-name != '' {
-    $variable-name: #{$variable-name}#{$colour-name}-;
+  @if $tone-name != '' {
+    $variable-name: #{$variable-name}#{$tone-name}-;
   }
 
   @for $n from 0 through $steps-total {

@@ -13,29 +13,32 @@
     <link rel="stylesheet" href="./styles/home.css" />
   </head>
   <body>
-    <main class="wrapper flow main">
-      <h1>Layout Examples</h1>
-      <p>반응형 웹 디자인을 위한 레이아웃 모음</p>
-      <section class="flow section">
-        <h2>전역 스타일</h2>
-        <ul>
-          <li><a href="#">글자</a></li>
-          <li><a href="#">공간</a></li>
-          <li><a href="#">색</a></li>
-        </ul>
-      </section>
-      <section class="flow section">
-        <h2>레이아웃</h2>
-        <ul>
-          <li><a href="./pages/box">Box</a></li>
-          <li><a href="./pages/flow">Flow</a></li>
-          <li><a href="./pages/wrapper">Wrapper</a></li>
-          <li><a href="./pages/cluster">Cluster</a></li>
-          <li><a href="./pages/sidebar">Sidebar</a></li>
-          <li><a href="./pages/switcher">Switcher</a></li>
-          <li><a href="./pages/grid">Grid</a></li>
-        </ul>
-      </section>
-    </main>
+    <div class="wrapper">
+      <main class="main | flow">
+        <section class="section | flow">
+          <h1>Layout Examples</h1>
+          <p>반응형 웹 디자인을 위한 레이아웃 모음</p>
+        </section>
+        <section class="section | flow">
+          <h2 class="section__title">전역 스타일</h2>
+          <ul class="section__list | flow">
+            <li><a href="#">글자</a></li>
+            <li><a href="#">공간</a></li>
+            <li><a href="#">색</a></li>
+          </ul>
+        </section>
+        <section class="section | flow">
+          <h2 class="section__title">레이아웃</h2>
+          <ul class="section__list | flow">
+            <li><a href="./pages/composition/Wrapper">Wrapper</a></li>
+            <li><a href="./pages/composition/Flow">Flow</a></li>
+            <li><a href="./pages/composition/Sidebar">Sidebar</a></li>
+            <li><a href="./pages/composition/Cluster">Cluster</a></li>
+            <li><a href="./pages/composition/Switcher">Switcher</a></li>
+            <li><a href="./pages/composition/Grid">Grid</a></li>
+          </ul>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

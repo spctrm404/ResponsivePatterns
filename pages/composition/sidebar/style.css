@@ -409,6 +409,27 @@ body {
   margin-block-start: var(--flow-space, 1em);
 }
 
+.sidebar[data-direction=rtl] > :last-child, .sidebar:not([data-direction]) > :first-child {
+  flex-grow: 1;
+  flex-basis: var(--sidebar-target-width, 20rem);
+}
+
+.sidebar[data-direction=rtl] > :first-child, .sidebar:not([data-direction]) > :last-child {
+  flex-grow: 999;
+  flex-basis: 0;
+  min-inline-size: var(--sidebar-content-min-width, calc(50% - 0.5 * var(--g)));
+}
+
+.sidebar {
+  --g: var(--sidebar-space, var(--space-s-l, 1rem));
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--g);
+}
+.sidebar[data-reversed] {
+  flex-direction: row-reverse;
+}
+
 .wrapper {
   --p-x: var(--wrapper-padding, var(--space-s-3xl, 1rem));
   position: relative;
@@ -423,6 +444,37 @@ ol {
   list-style: none;
 }
 
-.section__list > * {
-  --flow-space: 0.5em;
+code {
+  padding-inline-end: 0.5em;
+  font-weight: 700;
+}
+
+.elem {
+  background-color: var(--surface-2);
+}
+.elem__main {
+  color: var(--on-primary-container);
+  background-color: var(--primary-container);
+}
+.elem__main code {
+  color: var(--on-secondary-container);
+}
+.elem__side {
+  color: var(--on-secondary-container);
+  background-color: var(--secondary-container);
+}
+
+.section {
+  font-size: var(--step-4);
+}
+.section > *:not(h1, h2, h3, h4, h5, h6) {
+  font-size: var(--step-0);
+}
+
+.sticky-track {
+  position: relative;
+}
+.sticky-track__item {
+  position: sticky;
+  top: 0;
 }

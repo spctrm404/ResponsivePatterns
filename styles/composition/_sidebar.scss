@@ -1,40 +1,42 @@
-@mixin sidebar-left() {
+%left {
   flex-grow: 1;
   flex-basis: var(--sidebar-target-width, 20rem);
 }
 
-@mixin sidebar-right() {
+%right {
   flex-grow: 999;
   flex-basis: 0;
-  min-width: var(--sidebar-content-min-width, 50%);
+  min-inline-size: var(--sidebar-content-min-width, calc(50% - 0.5 * var(--g)));
 }
 
 .sidebar {
+  --g: var(--sidebar-space, var(--space-s-l, 1rem));
+
   display: flex;
   flex-wrap: wrap;
-  gap: var(--sidebar-space, var(--space-s-l, 1rem));
+  gap: var(--g);
 
   &:not([data-direction]) {
     > :first-child {
-      @include sidebar-left;
+      @extend %left;
     }
 
     > :last-child {
-      @include sidebar-right;
+      @extend %right;
     }
   }
 
   &[data-direction='rtl'] {
     > :last-child {
-      @include sidebar-left;
+      @extend %left;
     }
 
     > :first-child {
-      @include sidebar-right;
+      @extend %right;
     }
   }
-}
 
-.sidebar[data-reversed] {
-  flex-direction: row-reverse;
+  &[data-reversed] {
+    flex-direction: row-reverse;
+  }
 }
