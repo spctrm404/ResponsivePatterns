@@ -423,6 +423,12 @@ ol {
   list-style: none;
 }
 
+.section {
+  font-size: var(--step-4);
+}
+.section > *:not(h1, h2, h3, h4, h5, h6) {
+  font-size: var(--step-0);
+}
 .section__list > * {
-  --flow-space: 0.5em;
+  --flow-space: 0.25em;
 }

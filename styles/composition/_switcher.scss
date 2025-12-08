@@ -9,5 +9,6 @@
     flex-basis: calc(
       (var(--switcher-target-wrapper-width, 40rem) - 100%) * 999
     );
+    max-inline-size: 100%;
   }
 }

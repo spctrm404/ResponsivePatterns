@@ -8,9 +8,15 @@ ol {
 }
 
 .section {
+  font-size: var(--step-4);
+
+  > *:not(h1, h2, h3, h4, h5, h6) {
+    font-size: var(--step-0);
+  }
+
   &__list {
     & > * {
-      --flow-space: 0.5em;
+      --flow-space: 0.25em;
     }
   }
 }

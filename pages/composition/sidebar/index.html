@@ -19,18 +19,23 @@
           <h1>Composition: Sidebar</h1>
           <p>
             sidebar는 클래스가 적용된 요소의 두 자녀요소를 각각 메인 영역과
-            사이드바 영역으로 나눠, 너비 충분한 경우 나란히 배치하고, 그렇지
+            사이드바 영역으로 나눠, 너비가 충분한 경우 나란히 배치하고, 그렇지
             않은 경우 세로로 쌓이게 한다.
+          </p>
+          <p>
+            너비가 충분하다는 것의 의미는 메인 영역의 최소너비 + 사이드바 영역의
+            너비 + 두 요소 간의 간격이 부모요소가 허용하는 너비보다 작거나
+            같다는 것이다.
           </p>
         </section>
         <section class="section | flow">
           <h2>주요 변수</h2>
-          <ul>
+          <ul class="flow">
             <li><code>--sidebar-target-width</code>: 사이드바 영역의 너비</li>
             <li>
               <code>--sidebar-content-min-width</code>: 메인 영역의 최소 너비
             </li>
-            <li><code>--sidebar-space</code>: 사이드바 요소 간의 간격</li>
+            <li><code>--sidebar-space</code>: 두 요소 간의 간격</li>
           </ul>
         </section>
         <section class="section | flow">
@@ -78,9 +83,10 @@
           </p>
         </section>
       </main>
-      <aside class="elem__side | sticky-track">
-        <div class="sticky-track__item | flow">
+      <aside class="elem__side | sticky__track">
+        <div class="sticky__item | flow">
           <h3>Sidebar</h3>
+          <img src="../../../assets/horizontal-001.webp" alt="" />
           <p>
             사이드바 레이아웃은 주요 콘텐츠 옆에 보조 콘텐츠를 배치하는 데
             사용됩니다.

@@ -6,6 +6,10 @@
 ul,
 ol {
   list-style: none;
+
+  &.flow > li {
+    --flow-space: 0.75em;
+  }
 }
 
 code {
@@ -14,6 +18,9 @@ code {
 }
 
 .elem {
+  --sidebar-target-width: 30ch;
+  --sidebar-content-min-width: 60ch;
+
   background-color: var(--surface-2);
 
   &__main {
@@ -39,8 +46,10 @@ code {
   }
 }
 
-.sticky-track {
-  position: relative;
+.sticky {
+  &__track {
+    position: relative;
+  }
 
   &__item {
     position: sticky;

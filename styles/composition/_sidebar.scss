@@ -6,7 +6,10 @@
 %right {
   flex-grow: 999;
   flex-basis: 0;
-  min-inline-size: var(--sidebar-content-min-width, calc(50% - 0.5 * var(--g)));
+  min-inline-size: min(
+    100%,
+    var(--sidebar-content-min-width, calc(50% - 0.5 * var(--g)))
+  );
 }
 
 .sidebar {
