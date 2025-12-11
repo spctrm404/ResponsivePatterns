@@ -739,16 +739,38 @@ h6 {
   clip-path: rect(0 0 0 0);
 }
 
-.grid-wrapper {
+.main {
   --gutter: var(--space-s-2xl);
+  container-type: inline-size;
 }
 
-.section {
-  --flow-space: var(--space-m);
+.tones > * + * {
+  margin-top: 1em;
 }
-.section > * {
-  --flow-space: 1em;
+@container (width < 33.5625rem) {
+  .tones {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-2xs);
+  }
+  .tones > * + * {
+    margin-top: unset;
+  }
 }
-.section__list > * {
-  --flow-space: 0.25em;
+
+.tone__label {
+  font-weight: var(--font-bold);
+}
+
+.chips {
+  --flow-space: var(--space-3xs);
+  --switcher-container-min-width: 30rem;
+  --gutter: var(--space-3xs);
+}
+
+.chip__swatch {
+  aspect-ratio: 1/1;
+}
+.chip__label {
+  font-size: var(--step--2);
 }

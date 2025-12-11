@@ -1,10 +1,6 @@
-@use './global/base';
-@use './compositions';
-@use './utilities';
-
-.grid-wrapper {
-  --gutter: var(--space-s-2xl);
-}
+@use '../../../styles/global/base';
+@use '../../../styles/compositions';
+@use '../../../styles/utilities';
 
 .section {
   --flow-space: var(--space-m);
@@ -14,6 +10,8 @@
   }
 
   &__list {
+    padding-inline-start: 3ch;
+
     > * {
       --flow-space: 0.25em;
     }

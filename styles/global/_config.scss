@@ -1,13 +1,13 @@
-@use '../utilities/unitConverting' as *;
+@use '../scss-utilities/unit-converting' as *;
 
-$min-width: 600;
-$max-width: 1600;
+$min-width: 320;
+$max-width: 1440;
 $min-content-width: $min-width - 2 * 16;
-$max-content-width: $max-width - 2 * 120;
+$max-content-width: $max-width - 2 * 80;
 $min-font-size: 16;
 $max-font-size: 20;
 $min-font-scale: 1.2;
-$max-font-scale: 1.25;
+$max-font-scale: 1.333;
 
 :root {
   /* stylelint-disable-next-line scss/dollar-variable-no-missing-interpolation */
